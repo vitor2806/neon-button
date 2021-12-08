@@ -19,7 +19,6 @@ a {
     padding: 1rem 2.5rem;
     border-radius: .5rem;
     position: relative;
-    transition: 300ms ease-in;
 }
 
 a::before {
@@ -34,13 +33,25 @@ a::before {
     height: 100%;
     filter: blur(1em);
     opacity: 0;
-    transition: 200ms linear;
+    transition: 500ms linear;
 }
 
-a:focus,
-a:hover {
+a::after {
+    content: '';
+    position: absolute;
     text-shadow: 0 0 1em rgb(241, 84, 255);
     box-shadow: 0 0 2rem .3em rgb(241, 84, 255), inset 0 0 2rem 0.5rem rgb(241, 84, 255);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 500ms linear;
+}
+
+a:focus::after,
+a:hover::after {
+    opacity: 1;
 }
 
 a:focus::before,
