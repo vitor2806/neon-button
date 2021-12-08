@@ -36,3 +36,13 @@ a::before {
     filter: blur(1em);
 }
 
+a:focus,
+a:hover {
+    text-shadow: none;
+    box-shadow: 0 0 3rem .3em rgb(241, 84, 255);
+}
+
+a:focus::before,
+a:hover::before {
+    opacity: 0.8;
+}
